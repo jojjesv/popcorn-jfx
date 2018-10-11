@@ -1,2 +1,14 @@
 C:\Users\johansvensson\Documents\NetBeansProjects\Popcorn\src\main\java\se\johan\popcorn\MainApp.java
-C:\Users\johansvensson\Documents\NetBeansProjects\Popcorn\src\main\java\se\johan\popcorn\FXMLController.java
+C:\Users\johansvensson\Documents\NetBeansProjects\Popcorn\src\main\java\se\johan\popcorn\movie\Role.java
+C:\Users\johansvensson\Documents\NetBeansProjects\Popcorn\src\main\java\se\johan\popcorn\scenes\movieinfo\MovieInfoScene.java
+C:\Users\johansvensson\Documents\NetBeansProjects\Popcorn\src\main\java\se\johan\popcorn\scenes\main\MainLayout.java
+C:\Users\johansvensson\Documents\NetBeansProjects\Popcorn\src\main\java\se\johan\popcorn\movie\MoviePreview.java
+C:\Users\johansvensson\Documents\NetBeansProjects\Popcorn\src\main\java\se\johan\popcorn\backend\BackendRequest.java
+C:\Users\johansvensson\Documents\NetBeansProjects\Popcorn\src\main\java\se\johan\popcorn\movie\Movie.java
+C:\Users\johansvensson\Documents\NetBeansProjects\Popcorn\src\main\java\se\johan\popcorn\scenes\layout\Heading.java
+C:\Users\johansvensson\Documents\NetBeansProjects\Popcorn\src\main\java\se\johan\popcorn\scenes\main\MainScene.java
+C:\Users\johansvensson\Documents\NetBeansProjects\Popcorn\src\main\java\se\johan\popcorn\movie\Actor.java
+C:\Users\johansvensson\Documents\NetBeansProjects\Popcorn\src\main\java\se\johan\popcorn\scenes\main\MoviePreviewView.java
+C:\Users\johansvensson\Documents\NetBeansProjects\Popcorn\src\main\java\se\johan\popcorn\scenes\movieinfo\MovieInfoLayout.java
+C:\Users\johansvensson\Documents\NetBeansProjects\Popcorn\src\main\java\se\johan\popcorn\scenes\layout\LayoutMaker.java
+C:\Users\johansvensson\Documents\NetBeansProjects\Popcorn\src\main\java\se\johan\popcorn\movie\Starring.java
