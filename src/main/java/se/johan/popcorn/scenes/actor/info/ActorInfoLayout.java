@@ -5,11 +5,17 @@
  */
 package se.johan.popcorn.scenes.actor.info;
 
+import javafx.collections.ObservableList;
+import javafx.geometry.Insets;
+import javafx.geometry.Orientation;
+import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.layout.FlowPane;
 import se.johan.popcorn.movie.Actor;
 import se.johan.popcorn.movie.Movie;
+import se.johan.popcorn.movie.MoviePreview;
 import se.johan.popcorn.scenes.layout.LayoutMaker;
+import se.johan.popcorn.scenes.movie.MoviePreviewGrid;
 
 /**
  *
@@ -17,13 +23,14 @@ import se.johan.popcorn.scenes.layout.LayoutMaker;
  */
 public class ActorInfoLayout implements LayoutMaker {
     public FlowPane root;
+    public MoviePreviewGrid movies;
     
     private Actor actor;
-    private Movie[] movies;
+    private MoviePreview[] starredMovies;
 
-    public ActorInfoLayout(Actor actor, Movie[] movies) {
+    public ActorInfoLayout(Actor actor, MoviePreview[] movies) {
         this.actor = actor;
-        this.movies = movies;
+        this.starredMovies = movies;
     }
 
     public Actor getActor() {
@@ -31,13 +38,21 @@ public class ActorInfoLayout implements LayoutMaker {
     }
 
     public Movie[] getMovies() {
-        return movies;
+        return starredMovies;
     }
     
     @Override
     public void makeLayout(Scene scene) {
         root = new FlowPane();
+        root.setPadding(new Insets(24));
+        root.setOrientation(Orientation.VERTICAL);
         
         scene.setRoot(root);
+        
+        ObservableList<Node> children = root.getChildren();
+        
+        movies = new MoviePreviewGrid();
+        children.add(movies);
+        movies.showMovies(starredMovies);
     }
 }

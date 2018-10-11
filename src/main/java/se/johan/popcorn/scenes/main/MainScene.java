@@ -43,7 +43,7 @@ public class MainScene extends Scene {
         Platform.runLater(new Runnable() {
             @Override
             public void run() {
-                layout.showMovies(result);
+                layout.movies.showMovies(result);
             }
         });
 

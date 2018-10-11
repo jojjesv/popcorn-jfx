@@ -49,7 +49,7 @@ public class ActorInfoScene extends Scene {
     public ActorInfoScene(Actor actor, MoviePreview[] movies) {
         super(new Pane());
         
-        layout = new ActorInfoLayout();
+        layout = new ActorInfoLayout(actor, movies);
         layout.makeLayout(this);
     }
 }
