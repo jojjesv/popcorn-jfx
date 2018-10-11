@@ -11,13 +11,18 @@ package se.johan.popcorn.movie;
  * @author Johan Svensson
  */
 public class Actor {
-
+    private String imageUri;
     private int id;
     private String name;
 
-    public Actor(int id, String name) {
+    public Actor(int id, String name, String imageUri) {
         this.id = id;
         this.name = name;
+        this.imageUri = imageUri;
+    }
+
+    public String getImageUri() {
+        return imageUri;
     }
 
     public int getId() {

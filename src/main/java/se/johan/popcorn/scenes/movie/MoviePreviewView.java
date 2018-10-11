@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package se.johan.popcorn.scenes.main;
+package se.johan.popcorn.scenes.movie;
 
 import javafx.collections.ObservableList;
 import javafx.geometry.HPos;

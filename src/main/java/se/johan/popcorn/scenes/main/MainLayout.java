@@ -5,6 +5,7 @@
  */
 package se.johan.popcorn.scenes.main;
 
+import se.johan.popcorn.scenes.movie.MoviePreviewView;
 import javafx.collections.ObservableList;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
@@ -25,7 +26,7 @@ import se.johan.popcorn.movie.Movie;
 import se.johan.popcorn.movie.MoviePreview;
 import se.johan.popcorn.scenes.layout.Heading;
 import se.johan.popcorn.scenes.layout.LayoutMaker;
-import se.johan.popcorn.scenes.movieinfo.MovieInfoScene;
+import se.johan.popcorn.scenes.movie.info.MovieInfoScene;
 
 /**
  * Sets the layout for the main 
@@ -62,9 +63,11 @@ class MainLayout implements LayoutMaker {
      * Shows a new movie info scene for a specific movie.
      */
     private void showMovieInfoScene(MoviePreview targetMovie) {
-        MovieInfoScene scene = new MovieInfoScene();
+        Movie movie = new Movie(120, "Test movie", 2018, 9.4, "PG");
+        MovieInfoScene scene = new MovieInfoScene(movie);
         
         Stage stage = new Stage();
+        stage.setTitle(movie.getTitle());
         stage.setScene(scene);
         stage.show();
     }
