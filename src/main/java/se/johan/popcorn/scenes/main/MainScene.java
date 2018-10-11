@@ -36,9 +36,9 @@ public class MainScene extends Scene {
      */
     void fetchMovies() {
         final MoviePreview[] result = new MoviePreview[]{
-            new MoviePreview("Guardians of the Galaxy Vol. 2", "https://via.placeholder.com/350x150"),
-            new MoviePreview("Guardians of the Galaxy Vol. 12", "https://via.placeholder.com/350x150"),
-            new MoviePreview("Guardians of the Galaxy Vol. 10", "https://via.placeholder.com/350x150")
+            new MoviePreview(1, "Guardians of the Galaxy Vol. 2", "https://via.placeholder.com/350x150"),
+            new MoviePreview(2, "Guardians of the Galaxy Vol. 12", "https://via.placeholder.com/350x150"),
+            new MoviePreview(3, "Guardians of the Galaxy Vol. 10", "https://via.placeholder.com/350x150")
         };
         Platform.runLater(new Runnable() {
             @Override

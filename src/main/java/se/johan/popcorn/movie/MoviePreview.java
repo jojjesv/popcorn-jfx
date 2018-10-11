@@ -13,9 +13,25 @@ import java.awt.image.BufferedImage;
  * @author Johan Svensson
  */
 public class MoviePreview {
-
+    private int movieId;
     private String title;
     private String imageUri;
+
+    public MoviePreview(int movieId, String title, String imageUri) {
+        this.movieId = movieId;
+        this.title = title;
+        this.imageUri = imageUri;
+    }
+
+    public int getMovieId() {
+        return movieId;
+    }
+
+    public void setMovieId(int movieId) {
+        this.movieId = movieId;
+    }
+    
+    
 
     public String getTitle() {
         return title;
@@ -30,11 +46,6 @@ public class MoviePreview {
     }
 
     public void setImageUri(String imageUri) {
-        this.imageUri = imageUri;
-    }
-
-    public MoviePreview(String title, String imageUri) {
-        this.title = title;
         this.imageUri = imageUri;
     }
 

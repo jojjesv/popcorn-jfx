@@ -9,6 +9,7 @@ import javafx.collections.ObservableList;
 import javafx.geometry.HPos;
 import javafx.geometry.Insets;
 import javafx.geometry.Orientation;
+import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
@@ -32,13 +33,17 @@ public class ActorPreviewView extends FlowPane {
     private void initControls() {
         setOrientation(Orientation.VERTICAL);
         setColumnHalignment(HPos.CENTER);
+        setPadding(new Insets(8));
         
         ObservableList<Node> children = getChildren();
         
         thumbnail = new ImageView(data.getImageUri());
+        thumbnail.setFitHeight(80);
+        thumbnail.setPreserveRatio(true);
         children.add(thumbnail);
         
         name = new Label(data.getName());
+        name.setAlignment(Pos.CENTER);
         name.setPadding(new Insets(8, 0, 0, 0));
         children.add(name);
     }

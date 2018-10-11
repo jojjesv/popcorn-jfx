@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package se.johan.popcorn.scenes.movie.info;
+package se.johan.popcorn.scenes.actor.info;
 
 import java.io.IOException;
 import javafx.scene.Scene;
@@ -11,19 +11,19 @@ import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import se.johan.popcorn.movie.Actor;
 import se.johan.popcorn.movie.Movie;
+import se.johan.popcorn.movie.MoviePreview;
 
 /**
- *
+ * Scene which displays info about a specific actor.
  * @author johansvensson
  */
-public class MovieInfoScene extends Scene {
-
+public class ActorInfoScene extends Scene {
     /**
-     * Fetches a movie with a specific ID then shows it.
+     * Fetches actor's movies.
      *
-     * @param movie Movie to associate with the scene.
+     * @param actorId ID of actor to fetch.
      */
-    public static void show(int movieId) throws IOException {
+    public static void show(int actorId) throws IOException {
         show(new Movie(movieId, "Jurassic Path", 2018, movieId, "PG", new Actor[]{
             new Actor(1, "Max Payne", "https://ctvalleybrewing.com/wp-content/uploads/2017/04/avatar-placeholder.png"),
             new Actor(2, "Bruce Willis", "https://ctvalleybrewing.com/wp-content/uploads/2017/04/avatar-placeholder.png"),
@@ -33,26 +33,23 @@ public class MovieInfoScene extends Scene {
     }
 
     /**
-     * Shows a new stage with a new movie info scene as the default scene.
-     *
-     * @param movie Movie to associate with the scene.
+     * Shows a new stage with a new actor info scene.
      */
-    public static void show(Movie movie) {
+    public static void show(Actor actor, MoviePreview[] movies) {
         Stage stage = new Stage();
-        stage.setTitle(movie.getTitle());
+        stage.setTitle(String.format("Movies starring %s", actor.getName()));
         
-        MovieInfoScene scene = new MovieInfoScene(movie);
+        ActorInfoScene scene = new ActorInfoScene(actor, movies);
         stage.setScene(scene);
         
         stage.show();
     }
-
-    private MovieInfoLayout layout;
-
-    public MovieInfoScene(Movie movie) {
+    private ActorInfoLayout layout;
+    
+    public ActorInfoScene(Actor actor, MoviePreview[] movies) {
         super(new Pane());
-
-        layout = new MovieInfoLayout(movie);
+        
+        layout = new ActorInfoLayout();
         layout.makeLayout(this);
     }
 }

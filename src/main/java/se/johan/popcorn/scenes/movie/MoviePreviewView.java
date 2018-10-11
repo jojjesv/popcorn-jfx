@@ -51,7 +51,6 @@ public class MoviePreviewView extends FlowPane {
         MoviePreview data = this.originalData;
         
         title = new Label(data.getTitle());
-        title.setPrefWidth(80);
         title.setPadding(new Insets(8, 0, 0, 0));
         title.setAlignment(Pos.CENTER);
         
@@ -60,11 +59,8 @@ public class MoviePreviewView extends FlowPane {
         int vwidth = 36;
         int vheight = 48;
         Image img = thumbnail.getImage();
-        thumbnail.setViewport(new Rectangle2D(
-                (img.getWidth() - vwidth) / 2,
-                (img.getHeight() - vheight) / 2,
-                vwidth, vheight
-        ));
+        thumbnail.setFitHeight(80);
+        thumbnail.setPreserveRatio(true);
     
         ObservableList<Node> children = getChildren();
         children.add(thumbnail);
