@@ -12,6 +12,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import se.johan.popcorn.movie.MoviePreview;
 import se.johan.popcorn.scenes.movie.info.MovieInfoScene;
+import se.johan.popcorn.utils.AlertUtils;
 
 /**
  * A grid for displaying clickable movie previews.
@@ -53,7 +54,11 @@ public class MoviePreviewGrid extends GridPane {
         try {
             MovieInfoScene.show(targetMovie.getMovieId());
         } catch (Exception e) {
-
+            e.printStackTrace();
+            AlertUtils.showError(
+                    "Can't be opened right now. Try again later.",
+                    "Failed to open movie"
+            );
         }
     }
 }

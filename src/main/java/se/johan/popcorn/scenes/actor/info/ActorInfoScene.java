@@ -23,13 +23,10 @@ public class ActorInfoScene extends Scene {
      *
      * @param actorId ID of actor to fetch.
      */
-    public static void show(int actorId) throws IOException {
-        show(new Movie(movieId, "Jurassic Path", 2018, movieId, "PG", new Actor[]{
-            new Actor(1, "Max Payne", "https://ctvalleybrewing.com/wp-content/uploads/2017/04/avatar-placeholder.png"),
-            new Actor(2, "Bruce Willis", "https://ctvalleybrewing.com/wp-content/uploads/2017/04/avatar-placeholder.png"),
-            new Actor(3, "John McCain", "https://ctvalleybrewing.com/wp-content/uploads/2017/04/avatar-placeholder.png"),
-            new Actor(4, "Owe Boll", "https://ctvalleybrewing.com/wp-content/uploads/2017/04/avatar-placeholder.png")
-        }));
+    public static void show(Actor actor) throws IOException {
+        show(actor, ActorInfoService.getInstance().fetchMoviePreviews(
+                actor.getId()
+        ));
     }
 
     /**

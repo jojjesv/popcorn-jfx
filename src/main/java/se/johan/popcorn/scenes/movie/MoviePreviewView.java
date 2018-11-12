@@ -19,17 +19,20 @@ import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.Pane;
+import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import se.johan.popcorn.movie.MoviePreview;
 
 /**
  * Represents a single movie preview.
+ *
  * @author Johan Svensson
  */
-public class MoviePreviewView extends FlowPane {
+public class MoviePreviewView extends VBox {
+
     private ImageView thumbnail;
     private Label title;
-    
+
     private MoviePreview originalData;
 
     public MoviePreview getOriginalData() {
@@ -38,30 +41,31 @@ public class MoviePreviewView extends FlowPane {
 
     public MoviePreviewView(MoviePreview data) {
         this.originalData = data;
-        
+
         this.initControls();
     }
-    
+
     private void initControls() {
         this.setPadding(new Insets(8, 8, 8, 8));
-        
-        this.setOrientation(Orientation.VERTICAL);
-        setColumnHalignment(HPos.CENTER);
+
+        setAlignment(Pos.CENTER);
         
         MoviePreview data = this.originalData;
-        
+
         title = new Label(data.getTitle());
         title.setPadding(new Insets(8, 0, 0, 0));
         title.setAlignment(Pos.CENTER);
-        
-        thumbnail = new ImageView(data.getImageUri());
-        
+        title.setPrefWidth(80);
+
+        String imageUri = data.getImageUri();
+        thumbnail = new ImageView(imageUri != null ? imageUri : ("http://www.citypages.com/img/movie-placeholder.gif"));
+
         int vwidth = 36;
         int vheight = 48;
         Image img = thumbnail.getImage();
         thumbnail.setFitHeight(80);
         thumbnail.setPreserveRatio(true);
-    
+
         ObservableList<Node> children = getChildren();
         children.add(thumbnail);
         children.add(title);

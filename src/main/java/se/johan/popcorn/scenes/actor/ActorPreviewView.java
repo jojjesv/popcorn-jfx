@@ -37,7 +37,10 @@ public class ActorPreviewView extends FlowPane {
         
         ObservableList<Node> children = getChildren();
         
-        thumbnail = new ImageView(data.getImageUri());
+        String imageUri = data.getImageUri(); 
+        thumbnail = new ImageView(
+                imageUri != null ? imageUri : "http://www.citypages.com/img/movie-placeholder.gif"
+        );
         thumbnail.setFitHeight(80);
         thumbnail.setPreserveRatio(true);
         children.add(thumbnail);

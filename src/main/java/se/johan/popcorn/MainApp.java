@@ -15,8 +15,9 @@ public class MainApp extends Application {
     public void start(Stage stage) throws Exception {
         Scene scene = new MainScene();
         
-        stage.setTitle("JavaFX and Maven");
+        stage.setTitle("Movies - Popcorn");
         stage.setScene(scene);
+        stage.setResizable(false);
         stage.show();
     }
 
